@@ -1,5 +1,7 @@
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ApolloWrapper from "./../lib/apollo-wrapper"
 import "./globals.css";
 
 const geistSans = localFont({
@@ -24,10 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
+
+        <html lang="en">
+          <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <ApolloWrapper>{children}</ApolloWrapper>
+          </body>
+        </html>
   );
 }
